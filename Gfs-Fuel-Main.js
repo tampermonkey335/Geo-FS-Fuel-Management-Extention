@@ -18,20 +18,20 @@
         '2': { // C172 Skyhawk
             fuelCapacity: 50, // Real-life fuel capacity for C172Skyhawk in gallons
             fuelBurnRates: {
-                '10': 4.5,  // Idle power (10% thrust) in GPH
-                '65': 8,    // Cruise power (65% thrust) in GPH
-                '75': 8.5,  // Cruise power (75% thrust) in GPH
-                '100': 9.5  // Full power (100% thrust) in GPH
+                '10': 4.5,  // Idle power (10% thrust) in G/H
+                '65': 8,    // Cruise power (65% thrust) in G/H
+                '75': 8.5,  // Cruise power (75% thrust) in G/H
+                '100': 9.5  // Full power (100% thrust) in G/H
             }
         },
         // Example placeholder for future aircraft data
         '3': {
             fuelCapacity: 100, // Placeholder value for a different aircraft
             fuelBurnRates: {
-                '10': 6.5,   // Idle power in GPH
-                '65': 12,    // Cruise power in GPH
-                '75': 13,    // Higher cruise power in GPH
-                '100': 15    // Full power in GPH
+                '10': 6.5,   // Idle power in G/H
+                '65': 12,    // Cruise power in G/H
+                '75': 13,    // Higher cruise power in G/H
+                '100': 15    // Full power in G/H
             }
         }
     };
@@ -83,11 +83,11 @@
         let thrustPercentage = currentRPM / maxRPM;
 
         // Get the fuel burn rate based on thrust percentage
-        let fuelBurnRate = getFuelBurnRate(thrustPercentage, fuelBurnRates); // Gallons per hour (GPH)
+        let fuelBurnRate = getFuelBurnRate(thrustPercentage, fuelBurnRates); // Gallons per hour (G/H)
 
         // Calculate fuel used for the current time interval
         let timeInterval = 5; // Time interval in seconds between checks (adjustable)
-        let fuelUsed = (fuelBurnRate / 3600) * timeInterval; // Convert GPH to gallons used in the time interval
+        let fuelUsed = (fuelBurnRate / 3600) * timeInterval; // Convert G/H to gallons used in the time interval
 
         // Deduct the fuel used from remaining fuel
         remainingFuel -= fuelUsed;
